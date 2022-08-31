@@ -1,0 +1,21 @@
+.pizzas {
+    margin-top: 80px;
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        width: 920px;
+        &_item {
+            padding: 0 20px;
+            min-width: 82px;
+            height: 46px;
+            background: #F9F9F9;
+            border-radius: 30px;
+            border: none;
+        }
+    }
+    &__title {
+        margin: 35px 0;
+        font-weight: 700;
+        font-size: 32px;
+    }
+}
