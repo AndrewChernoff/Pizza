@@ -3,7 +3,7 @@
       {
         "id": 0,
         "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/f035c7f46c0844069722f2bb3ee9f113_584x584.jpeg",
-        "name": "Пепперони Фреш с перцем",
+        "name": "Пепперони Фреш",
         "types": [0, 1],
         "sizes": [26, 30, 40],
         "price": 803,
@@ -33,7 +33,7 @@
       {
         "id": 3,
         "imageUrl": "https://dodopizza.azureedge.net/static/Img/Products/Pizza/ru-RU/af553bf5-3887-4501-b88e-8f0f55229429.jpg",
-        "name": "Кисло-сладкий цыпленок",
+        "name": "Сырный цыпленок",
         "types": [1],
         "sizes": [26, 30, 40],
         "price": 275,

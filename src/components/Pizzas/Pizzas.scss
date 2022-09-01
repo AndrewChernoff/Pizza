@@ -1,9 +1,11 @@
 .pizzas {
     margin-top: 80px;
+
     &__btns {
         display: flex;
         justify-content: space-between;
         width: 920px;
+
         &_item {
             padding: 0 20px;
             min-width: 82px;
@@ -13,9 +15,122 @@
             border: none;
         }
     }
+
     &__title {
-        margin: 35px 0;
+        margin: 35px 0 0 0;
         font-weight: 700;
         font-size: 32px;
+    }
+
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        .pizzas__item {
+            margin-top: 35px;
+            min-height: 460px;
+            max-width: 280px;
+
+            &_img {
+                display: block;
+                margin: 0 auto;
+                height: 260px;
+                max-width: 260px;
+            }
+
+            &_title {
+                text-align: center;
+                font-weight: 800;
+                font-size: 20px;
+                margin: 11px 0 22px 0;
+            }
+
+            &_params {
+                padding: 7px 0 7px 0;
+                gap: 5px;
+                width: 280px;
+                min-height: 85px;
+                background: #F3F3F3;
+                border-radius: 10px;
+
+                &_doughs {
+                    display: flex;
+                    justify-content: center;
+                    gap: 5px;
+
+                    &_item {
+                        font-weight: 700;
+                        font-size: 14px;
+                        text-align: center;
+                        width: 131px;
+                        height: 32px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+                        border-radius: 5px;
+                        padding: 3px;
+
+                        &_item_active {
+                            font-weight: 700;
+                            font-size: 14px;
+                            text-align: center;
+                            width: 131px;
+                            height: 32px;
+                            background: rgba(255, 255, 255, 0.3);
+                            border-radius: 5px;
+                            padding: 3px;
+                        }
+                    }
+                }
+
+                &_size {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 7px 5px 0 9px;
+
+                    &_item {
+                        border: none;
+                        text-align: center;
+                        width: 86px;
+                        height: 32px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+                        border-radius: 5px;
+                    }
+
+                    &_item_active {
+                        border: none;
+                        text-align: center;
+                        width: 86px;
+                        height: 32px;
+                        background: #FFFFFF;
+                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+                        border-radius: 5px;
+                    }
+                }
+            }
+
+            &_manipulations {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 280px;
+                min-height: 85px;
+                background: #FFFFFF;
+                box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.03);
+                border-radius: 10px;
+
+                &_btn {
+                    color: #FFFFFF;
+                    width: 132px;
+                    height: 40px;
+                    background: #FE5F1E;
+                    border: 1px solid #FE5F1E;
+                    border-radius: 30px;
+                    font-weight: 700;
+                    font-size: 16px;
+                }
+            }
+        }
     }
 }
