@@ -15,18 +15,9 @@ const Pizzas = () => {
 
   const {cart} = useAppSelector((state) => state.cart); //getting products from cart for  adding quantity to Add pizza button
 
-  ///let qwert = cart.find((obj) => obj.id === id);
-
-  /*const findQuantity = (pizzaId:number) => {////
-    return cart.find((obj) => obj.id === pizzaId).quantity;
-  }
-  const addedCount = findQuantity;*/
-
-
-  const getPizzaFromCart = (pizzaId: number) => {
+  const findPizzaFromCart = (pizzaId: number) => {
     let addedItem = cart.find((el) => el.id === pizzaId)
     if(cart.length !== 0 && addedItem) {
-      //console.log(addedItem.quantity + '  ' + addedItem.name)
       return addedItem.quantity;
     }
   };
@@ -43,7 +34,7 @@ const Pizzas = () => {
 
   const onAddBtnClick = (obj: CartItem) => {
     dispatch(addItem(obj));
-    getPizzaFromCart(obj.id)
+    findPizzaFromCart(obj.id)
     //console.log(obj.id)
   };
 
@@ -115,7 +106,7 @@ const Pizzas = () => {
             }
             className="pizzas__item_manipulations_btn"
           >
-            + Добавить {getPizzaFromCart(id) }
+            + Добавить {findPizzaFromCart(id) }
           </button>
         </div>
       </div>
