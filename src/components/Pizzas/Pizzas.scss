@@ -9,7 +9,7 @@
     font-weight: 700;
     font-size: 14px;
     text-align: center;
-    width: 131px;
+    min-width: 131px;
     height: 32px;
     border-radius: 5px;
     padding: 3px;
@@ -78,17 +78,19 @@
                     justify-content: center;
                     gap: 5px;
 
-                    &_item {
-                        @include dough;
-                        background: #FFFFFF;
-                        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
-
-                        &_item_active {
+                    
+                        &_item {
                             @include dough;
                             background: rgba(255, 255, 255, 0.3);
 
+                            &_active {
+                                @include dough;
+                                background: #FFFFFF;
+                                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
+                            }
+
                         }
-                    }
+                    
                 }
 
                 &_size {
@@ -101,7 +103,7 @@
                         text-align: center;
                         width: 86px;
                         height: 32px;
-                        background: #FFFFFF;
+                        //background: #FFFFFF;
                         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
                         border-radius: 5px;
                     }
