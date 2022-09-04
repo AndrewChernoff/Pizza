@@ -3,13 +3,9 @@ import Pizzas from '../Pizzas/Pizzas';
 import './MainPage.scss';
 
 const MainPage = () => {
-    return (
-      <div className="wrapper">
-        <div className="container">
-       <Header/>
+    return (<>
        <Pizzas/>
-       </div>
-      </div>
+      </>
     );
   }
 

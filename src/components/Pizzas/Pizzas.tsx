@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { useAppSelector } from "../../hooks/hooks";
 import useApi from "../../hooks/useApi";
+import { getFilter } from "../../redux/filter/filterSlice";
 import { fetchPizza } from "../../redux/pizzas/pizzasSlice";
 import PizzaItem from "../PizzaItem/PizzaItem";
 import "./Pizzas.scss";
@@ -9,9 +10,20 @@ import "./Pizzas.scss";
 const Pizzas: React.FC = () => {
   const { request } = useApi();
   const dispatch = useDispatch();
-  const { pizzas } = useAppSelector((state) => state.pizza);
+  const pizzas  = useAppSelector(
+    state => {
+      if(state.filter.filter === 0) {
+        return state.pizza.pizzas;
+      } else {
+        return state.pizza.pizzas.filter(el => el.category === state.filter.filter);
+      }
+    }
+    );
+    
+  const [activeFilter, setActiveFilter] = useState(0);
   
   useEffect(() => {
+    console.log('effect')
     request("http://localhost:3001/pizzas").then((res: any): void => {
       dispatch(fetchPizza(res));
     });
@@ -26,9 +38,12 @@ const Pizzas: React.FC = () => {
     { id: 6, name: "Закрытые" },
   ];
 
-  const buttons = buttonsData.map(({ name, id }) => {
+  const buttons = buttonsData.map(({ name, id }, i) => {
     return (
-      <button key={id} className="pizzas__btns_item">
+      <button onClick={() => {
+        setActiveFilter(i)
+        dispatch(getFilter(i))
+        }} key={id} className={activeFilter === i? "pizzas__btns_item_active" : "pizzas__btns_item"}>
         {name}
       </button>
     );

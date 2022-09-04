@@ -5,20 +5,17 @@ import { addItem } from "../../redux/cart/cart";
 import { CartItem } from "../../redux/cart/cartStyle";
 import { useAppDispatch } from "../store/store";
 
-type Props = {
-    params: any,
-    onAddBtnClick: () => void,
-
-}
-
 const PizzaItem = (props:any) => {
-  let { id, name, imageUrl, sizes, price } = props.params;
-  const [sizeIndex, setSizeIndex] = useState(0);
-  const pizzaRef: Ref = useRef([]);
-  const [dough, setDough] = useState(0);
-  const doughType = ["тонкое", "традиционное"];
   const dispatch = useAppDispatch();
   const { cart } = useAppSelector((state) => state.cart); //getting products from cart for  adding quantity to Add pizza button
+  const [sizeIndex, setSizeIndex] = useState(0);
+  
+  const pizzaRef: Ref = useRef([]);
+
+  const { id, name, imageUrl, sizes, price } = props.params;
+  const [dough, setDough] = useState(0);
+  const doughType = ["тонкое", "традиционное"];
+  
   type Ref = {
     current: any[];
   };
@@ -70,9 +67,10 @@ const PizzaItem = (props:any) => {
             return (
               <button
                 key={i}
-                onClick={() => {
-                  console.log(i)
+                onClick={(e) => {
+                  debugger
                   setSizeIndex(i)
+                  //setSizeIndex()
                 }}
                 tabIndex={1}
                 className={
@@ -88,14 +86,16 @@ const PizzaItem = (props:any) => {
         </div>
       </div>
       <div className="pizzas__item_manipulations">
-        <div className="pizzas__item_manipulations_price">{price} p</div>
+        <div className="pizzas__item_manipulations_price">от {price} &#8381;</div>
         <button
           onClick={() =>
             onAddBtnClick({
               id: id,
               imageUrl: imageUrl,
               name: name,
+              type: dough,
               quantity: 1,
+              price: price
             })
           }
           className="pizzas__item_manipulations_btn"
