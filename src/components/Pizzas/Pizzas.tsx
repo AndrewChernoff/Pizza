@@ -1,33 +1,24 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useAppSelector } from "../../hooks/hooks";
-import useApi from "../../hooks/useApi";
 import { getFilter } from "../../redux/filter/filterSlice";
-import { fetchPizza } from "../../redux/pizzas/pizzasSlice";
 import PizzaItem from "../PizzaItem/PizzaItem";
 import "./Pizzas.scss";
 
-const Pizzas: React.FC = () => {
-  const { request } = useApi();
+type PizzaBlockProps = {
+  pizzas: { 
+    id: number,
+    name: string,
+    imageUrl: string,
+     sizes: number[], 
+     price: number
+  } []
+  };
+
+const Pizzas = (props: PizzaBlockProps) => {
+
   const dispatch = useDispatch();
-  const pizzas  = useAppSelector(
-    state => {
-      if(state.filter.filter === 0) {
-        return state.pizza.pizzas;
-      } else {
-        return state.pizza.pizzas.filter(el => el.category === state.filter.filter);
-      }
-    }
-    );
     
   const [activeFilter, setActiveFilter] = useState(0);
-  
-  useEffect(() => {
-    console.log('effect')
-    request("http://localhost:3001/pizzas").then((res: any): void => {
-      dispatch(fetchPizza(res));
-    });
-  }, []);
 
   const buttonsData = [
     { id: 1, name: "Все" },
@@ -49,7 +40,7 @@ const Pizzas: React.FC = () => {
     );
   });
 
-  const pizzaItems = pizzas.map(
+  const pizzaItems = props.pizzas.map(
     ({ id, name, imageUrl, sizes, price }) => {
       return ( <PizzaItem key={id} params={{ id, name, imageUrl, sizes, price }} />
       );
@@ -58,11 +49,9 @@ const Pizzas: React.FC = () => {
 
   return (
     <div className="pizzas">
-      {/* need to work on active classname styles  */}
       <div className="pizzas__btns">{buttons}</div>
       <h2 className="pizzas__title">Все пиццы</h2>
       <div className="pizzas__items">
-        {" "}
         {pizzaItems}
       </div>
     </div>

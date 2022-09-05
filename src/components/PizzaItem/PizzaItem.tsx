@@ -68,9 +68,7 @@ const PizzaItem = (props:any) => {
               <button
                 key={i}
                 onClick={(e) => {
-                  debugger
                   setSizeIndex(i)
-                  //setSizeIndex()
                 }}
                 tabIndex={1}
                 className={

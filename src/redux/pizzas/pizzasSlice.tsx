@@ -22,14 +22,6 @@ const pizzas = createSlice({
       state.fetching = false;
       state.pizzas = state.pizzas.concat(action.payload);
     },
-   /*  addItem: (state, action: PayloadAction<PizzaObject>) => {
-      let addedItem = state.cart.find((el) => el.id === action.payload.id);
-      if(addedItem) {
-        addedItem.quantity++;
-      } else {
-        state.cart.push(action.payload);  
-      }
-    }, */
     error: (state) => {
       state.error = true;
     },
