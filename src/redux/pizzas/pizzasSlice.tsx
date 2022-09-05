@@ -18,9 +18,9 @@ const pizzas = createSlice({
     fetching: (state) => {
       state.fetching = true;
     },
-    fetchPizza: (state, action: PayloadAction<PizzasAction>) => {
+    fetchPizza: (state, action: PayloadAction<PizzasAction[]>) => {
       state.fetching = false;
-      state.pizzas = state.pizzas.concat(action.payload);
+      state.pizzas = action.payload;
     },
     error: (state) => {
       state.error = true;
