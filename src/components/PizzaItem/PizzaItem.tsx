@@ -1,4 +1,3 @@
-import PropTypes  from "prop-types";
 import { useRef, useState } from "react";
 import { useAppSelector } from "../../hooks/hooks";
 import { addItem } from "../../redux/cart/cart";
@@ -8,11 +7,12 @@ import { useAppDispatch } from "../store/store";
 const PizzaItem = (props:any) => {
   const dispatch = useAppDispatch();
   const { cart } = useAppSelector((state) => state.cart); //getting products from cart for  adding quantity to Add pizza button
+  const { id, name, imageUrl, sizes, price } = props.params;
   const [sizeIndex, setSizeIndex] = useState(0);
+  const [pizzaSize, setPizzasize] = useState(sizes[0]);
   
   const pizzaRef: Ref = useRef([]);
 
-  const { id, name, imageUrl, sizes, price } = props.params;
   const [dough, setDough] = useState(0);
   const doughType = ["тонкое", "традиционное"];
   
@@ -68,7 +68,8 @@ const PizzaItem = (props:any) => {
               <button
                 key={i}
                 onClick={(e) => {
-                  setSizeIndex(i)
+                  setSizeIndex(i);
+                  setPizzasize(el);
                 }}
                 tabIndex={1}
                 className={
@@ -93,7 +94,8 @@ const PizzaItem = (props:any) => {
               name: name,
               type: dough,
               quantity: 1,
-              price: price
+              price: price,
+              size: pizzaSize
             })
           }
           className="pizzas__item_manipulations_btn"

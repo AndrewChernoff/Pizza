@@ -17,18 +17,5 @@ export type PizzasArray = {
 };
 
 export type PizzasAction = {
-  type: string;
-  payload: PizzasArray[];
+  payload: PizzasArray;
 };
-
- /* export type PizzaObject = {
-  id: number
-  imageUrl: string
-  name: string,
-  quantity: number
-} */
-
-/* export type PizzaItem = {
-  type: string,
-  payload: PizzaObject
-} */

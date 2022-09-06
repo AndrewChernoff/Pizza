@@ -8,13 +8,11 @@ const App = () => {
   return (
     <div className="wrapper">
       <div className="container">
-        <BrowserRouter>
           <Header />
           <Routes>
             <Route path="/" element={<MainPage />} />
             <Route path="/cart" element={<Cart />} />
           </Routes>
-        </BrowserRouter>
       </div>
     </div>
   );

@@ -12,10 +12,56 @@
         
     }
     &__item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 820px;
+        height: 140px;
+        border-top: #F4F4F4 1px solid;
         &_img {
             max-width: 80px;
             height: 80px;
         }
-    }
+        &_main-info{
+            display: flex;
+            width: 280px; 
+            height: 80px;
+           
+        }
+        &_info{
+            margin: 15px 5px 0 14px;
+            &_title {
+                font-weight: 700;
+                font-size: 22px;
+            }
+            &_subtitle {
+                font-weight: 400;
+                font-size: 18px;
+                color: #8D8D8D;
 
+            }
+        }
+        &_quantity {
+            button {
+            margin: 0 12px;
+            width: 32px;
+            height: 32px;
+            background: #FFFFFF;
+            color: #FE5F1E;
+            border: 2px solid #FE5F1E;
+            border-radius: 100%;
+            }
+
+            span {
+                font-weight: 700;
+                font-size: 22px;
+            }
+        }
+        &_close {
+            width: 32px;
+            height: 32px;
+            background: #FFFFFF;
+            color: #D7D7D7;
+        }
+    }
 }

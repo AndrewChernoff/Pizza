@@ -20,7 +20,7 @@ const MainPage = () => {
       }
     }
     ); 
-  const pizzasCheck = useAppSelector(state => state.pizza);
+  ///const pizzasCheck = useAppSelector(state => state.pizza);
 
   useEffect(() => {
     console.log('effect')

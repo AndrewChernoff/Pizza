@@ -2,19 +2,31 @@ import './Header.scss';
 import cart from "../../assets/icons/cart_icon.svg"
 import pizza from "../../assets/logo/pizza_logo.png";
 import { useAppSelector } from '../../hooks/hooks';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
 
   //const [isClosed, setIsClosed ] = useState(false) try to make onClick to needed link
+  let location = useLocation();
+  console.log(location.pathname)
   const cartItems = useAppSelector(state => state.cart.cart)
 
   let headerPrice = 0;
   let headerQuantity = 0;
 
   cartItems.forEach(el => (headerQuantity += el.quantity));
-  cartItems.forEach(el => (headerPrice += el.price));
+  cartItems.forEach(el => (headerPrice += (el.price * el.quantity)));
+ 
+ let cartLink;
+
+  if(location.pathname === '/cart') {
+    cartLink = null 
+  } else {
+    cartLink = <Link to='/cart' className="header__cart__btn">
+    <div className="header__cart__btn_price"> {headerPrice}&#8381; </div> 
+    <div> <img src={cart}/> <div> {headerQuantity} </div> </div>
+  </Link>
+  }
 
   return (
     <header>
@@ -26,10 +38,12 @@ const Header = () => {
         </div>
       </Link>
 
-      <Link to='/cart' className="header__cart__btn">
+    {cartLink}
+
+      {/* <Link to='/cart' className="header__cart__btn">
         <div className="header__cart__btn_price"> {headerPrice}&#8381; </div> 
         <div> <img src={cart}/> <div> {headerQuantity} </div> </div>
-        </Link>
+      </Link> */}
     </header>
   );
 };

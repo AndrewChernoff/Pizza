@@ -8,5 +8,6 @@ export type CartItem = {
     name: string,
     type: number,
     quantity: number,
-    price: number
+    price: number,
+    size: number
   }

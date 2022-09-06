@@ -14,6 +14,9 @@ const initialState: CartState = {
         let addedItem = state.cart.find((el) => el.id === action.payload.id);
         if(addedItem) {
           addedItem.quantity++;
+          addedItem.price = action.payload.price;
+          addedItem.size = action.payload.size;
+          addedItem.type = action.payload.type;
         } else {
           state.cart.push(action.payload);  
         }
