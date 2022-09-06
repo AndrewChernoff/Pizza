@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../hooks/hooks';
 import useApi from '../../hooks/useApi';
 import { fetching, fetchPizza } from '../../redux/pizzas/pizzasSlice';
+import LoadingItems from '../LoadingItems/LoadingItems';
 import Pizzas from '../Pizzas/Pizzas';
 import './MainPage.scss';
 
@@ -23,7 +24,6 @@ const MainPage = () => {
   ///const pizzasCheck = useAppSelector(state => state.pizza);
 
   useEffect(() => {
-    console.log('effect')
     dispatch(fetching())
     request("http://localhost:3001/pizzas").then((res: any): void => {
       dispatch(fetchPizza(res));
@@ -31,7 +31,9 @@ const MainPage = () => {
   }, []);
 
     return (<>
-      {fetchingStatus === true ? <div>Loading...</div> : <Pizzas pizzas={pizzas} />} 
+      {fetchingStatus === true ? 
+      <LoadingItems/> 
+      : <Pizzas pizzas={pizzas} />} 
       </>
     );
   }
