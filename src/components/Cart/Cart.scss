@@ -1,15 +1,30 @@
 .cart {
+    button {
+        cursor: pointer;
+    }
     &__container {
         margin: 0 224px 0 294px;
+    }
+    &__header {
+        margin: 140px 0 30px 0;
     }
     &__title {
         display: flex;
         justify-content: space-around;
         width: 175px;
-        margin: 140px 0 30px 0;
     }
-    &__items{
-        
+    &__clear{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        font-weight: 400;
+        font-size: 16px;
+        color: #B6B6B6;
+        cursor: pointer;
+        svg {
+            max-width: 20px;
+        }
     }
     &__item{
         display: flex;
@@ -24,13 +39,14 @@
         }
         &_main-info{
             display: flex;
-            width: 280px; 
+            width: 320px; 
             height: 80px;
            
         }
         &_info{
             margin: 15px 5px 0 14px;
             &_title {
+                min-width: 250px;
                 font-weight: 700;
                 font-size: 22px;
             }
@@ -58,10 +74,65 @@
             }
         }
         &_close {
+            cursor: pointer;
             width: 32px;
             height: 32px;
             background: #FFFFFF;
             color: #D7D7D7;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 40px;
+        width: 820px;
+        &_quantity {
+            &-total {
+                margin-bottom: 40px;
+                font-weight: 400;
+                font-size: 22px;
+                color: #000000;
+            }
+            
+        }
+        &-back {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: #D3D3D3;
+            width: 211px;
+            height: 55px;
+            background: #FFFFFF;
+            border: 1px solid #D3D3D3;
+            border-radius: 30px;
+            &:hover {
+                background: rgb(230, 225, 225);
+                color: white;
+            }
+            &:active {
+                background: grey;
+                color: white;
+            }
+        }
+        &_total {
+            &-price {
+                margin-bottom: 40px;
+                font-weight: 400;
+                font-size: 22px;
+                color: #000000;
+            }
+            &-pay {
+                width: 211px;
+                height: 55px;
+                background: #FE5F1E;
+                border-radius: 30px;
+                border: none;
+                font-weight: 700;
+                font-size: 16px;
+                color: #FFFFFF;
+            }
         }
     }
 }

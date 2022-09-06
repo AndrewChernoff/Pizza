@@ -5,10 +5,7 @@ import { useAppSelector } from '../../hooks/hooks';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
-
-  //const [isClosed, setIsClosed ] = useState(false) try to make onClick to needed link
   let location = useLocation();
-  console.log(location.pathname)
   const cartItems = useAppSelector(state => state.cart.cart)
 
   let headerPrice = 0;
