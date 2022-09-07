@@ -83,7 +83,7 @@ const PizzaItem = (props:any) => {
         </div>
       </div>
       <div className="pizzas__item_manipulations">
-        <div className="pizzas__item_manipulations_price">от {price} &#8381;</div>
+        <div className="pizzas__item_manipulations_price"> {price} &#8381;</div>
         <button
           onClick={() =>
             onAddBtnClick({

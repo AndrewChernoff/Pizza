@@ -49,11 +49,9 @@ const Pizzas = (props: PizzaBlockProps) => {
   const pizzaItems = props.pizzas.map(
     ({ id, name, imageUrl, sizes, price }) => {
       return (
-        <TransitionGroup key={id}>
           <CSSTransition key={id} timeout={500} classNames="item">
             <PizzaItem key={id} params={{ id, name, imageUrl, sizes, price }} />
           </CSSTransition>
-        </TransitionGroup>
       );
     }
   );
@@ -62,7 +60,10 @@ const Pizzas = (props: PizzaBlockProps) => {
     <div className="pizzas">
       <div className="pizzas__btns">{buttons}</div>
       <h2 className="pizzas__title">Все пиццы</h2>
-      <div className="pizzas__items">{pizzaItems}</div>
+      <TransitionGroup className='pizzas__items'>
+        {pizzaItems}
+      </TransitionGroup>
+
     </div>
   );
 };
