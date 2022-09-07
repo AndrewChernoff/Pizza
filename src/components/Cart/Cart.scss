@@ -2,18 +2,22 @@
     button {
         cursor: pointer;
     }
+
     &__container {
         margin: 0 224px 0 294px;
     }
+
     &__header {
         margin: 140px 0 30px 0;
     }
+
     &__title {
         display: flex;
         justify-content: space-around;
         width: 175px;
     }
-    &__clear{
+
+    &__clear {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,34 +26,41 @@
         font-size: 16px;
         color: #B6B6B6;
         cursor: pointer;
+
         svg {
             max-width: 20px;
         }
     }
-    &__item{
+
+    &__item {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 820px;
         height: 140px;
         border-top: #F4F4F4 1px solid;
+
         &_img {
             max-width: 80px;
             height: 80px;
         }
-        &_main-info{
+
+        &_main-info {
             display: flex;
-            width: 320px; 
+            width: 320px;
             height: 80px;
-           
+
         }
-        &_info{
+
+        &_info {
             margin: 15px 5px 0 14px;
+
             &_title {
                 min-width: 250px;
                 font-weight: 700;
                 font-size: 22px;
             }
+
             &_subtitle {
                 font-weight: 400;
                 font-size: 18px;
@@ -57,15 +68,21 @@
 
             }
         }
+
         &_quantity {
             button {
-            margin: 0 12px;
-            width: 32px;
-            height: 32px;
-            background: #FFFFFF;
-            color: #FE5F1E;
-            border: 2px solid #FE5F1E;
-            border-radius: 100%;
+                margin: 0 12px;
+                width: 32px;
+                height: 32px;
+                background: #FFFFFF;
+                color: #FE5F1E;
+                border: 2px solid #FE5F1E;
+                border-radius: 100%;
+
+                &:hover {
+                    color: #FFFFFF;
+                    background: #FE5F1E;
+                }
             }
 
             span {
@@ -73,6 +90,7 @@
                 font-size: 22px;
             }
         }
+
         &_close {
             cursor: pointer;
             width: 32px;
@@ -87,6 +105,7 @@
         justify-content: space-between;
         margin-top: 40px;
         width: 820px;
+
         &_quantity {
             &-total {
                 margin-bottom: 40px;
@@ -94,8 +113,9 @@
                 font-size: 22px;
                 color: #000000;
             }
-            
+
         }
+
         &-back {
             display: flex;
             justify-content: center;
@@ -107,15 +127,18 @@
             background: #FFFFFF;
             border: 1px solid #D3D3D3;
             border-radius: 30px;
+
             &:hover {
                 background: rgb(230, 225, 225);
                 color: white;
             }
+
             &:active {
                 background: grey;
                 color: white;
             }
         }
+
         &_total {
             &-price {
                 margin-bottom: 40px;
@@ -123,6 +146,7 @@
                 font-size: 22px;
                 color: #000000;
             }
+
             &-pay {
                 width: 211px;
                 height: 55px;

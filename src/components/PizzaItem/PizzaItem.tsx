@@ -33,7 +33,6 @@ const PizzaItem = (props:any) => {
     findPizzaFromCart(obj.id);
   };
 
-
     return (
       <div
       tabIndex={1}
@@ -67,11 +66,10 @@ const PizzaItem = (props:any) => {
             return (
               <button
                 key={i}
-                onClick={(e) => {
+                onClick={() => {
                   setSizeIndex(i);
                   setPizzasize(el);
                 }}
-                tabIndex={1}
                 className={
                   sizeIndex === i
                     ? "pizzas__item_params_size_item_active"
