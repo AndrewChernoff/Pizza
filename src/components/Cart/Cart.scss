@@ -174,3 +174,120 @@
         }
     }
 }
+
+@media (max-width: 992px) {
+    .cart {
+        &__container {
+            margin: 0;
+        }
+
+        &__header {
+            justify-content: space-around;
+        }
+
+        &__item {
+            max-width: 700px; ///
+            height: 140px;
+        }
+
+        &__footer {
+            justify-content: space-between;
+            max-width: 650px;
+
+            &_total {
+                width: 260px;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .cart {
+        &__item {
+            max-width: 590px;
+        }
+        &__footer {
+            max-width: 600px;
+            &_total-price {
+                font-size: 20px;
+            }
+            &__quantity-total {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    .cart {
+        &__title {
+            font-size: 20px;
+            width: 130px;
+            gap: 7px;
+        }
+
+        &__item {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position: relative;
+
+            svg {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            &_main-info {
+                display: grid;
+                grid-template-rows: auto auto auto;
+                min-width: 295px;
+                text-align: center;
+
+                img {
+                    margin: 0 auto;
+                }
+            }
+
+            &_info_title {
+                max-width: 180px;
+                font-weight: 700;
+                font-size: 16px;
+            }
+
+            &_price {
+                font-size: 25px;
+                font-weight: bold;
+            }
+        }
+
+        &__footer {
+            flex-direction: column-reverse;
+            align-items: center;
+            margin: 0 auto;
+            gap: 20px;
+            width: 300px;
+
+            &_total {
+                width: 230px;
+                text-align: center;
+                &-price {
+                    width: 250px;
+                }
+            }
+        }
+
+        &__clear {
+            font-size: 12px;
+
+            svg {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
+

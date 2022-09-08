@@ -8,6 +8,9 @@
             gap: 17px;
             text-decoration: none;
             color: black;
+            &:hover {
+                color: black;
+            }
 
             img {
                 max-width: 38px;
@@ -43,6 +46,7 @@
             border-radius: 30px;
             padding: 0 23px 0 23px;
             text-decoration: none;
+
             &:hover {
                 color: white;
             }
@@ -54,9 +58,83 @@
 
             div {
                 display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    width: 32px;
+                justify-content: space-around;
+                align-items: center;
+                width: 32px;
             }
         }
+    }
+
+
+    @media (max-width: 767px) {
+        header {
+
+            .header__logo {
+                &__logo-content {
+                    width: 300px;
+                }
+            }
+
+            .header__logo-subtitle {
+                width: 296px;
+                font-size: 15px;
+            }
+
+            .header__cart__btn {
+                width: 145px;
+            }
+        }
+    }
+
+    @media (max-width: 575px) {
+        header {
+            .header__logo {
+                width: 195px;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            .header__logo-subtitle {
+                width: 200px;
+                font-size: 14px;
+            }
+        }
+    }
+
+    @media (max-width: 530px) {
+        .header__logo img {
+            display: none;
+        }
+
+        .header__logo-title {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .header__logo-subtitle {
+            width: 156px;
+            font-size: 12px;
+        }
+
+        .header__cart__btn {
+            width: 103px;
+        }
+    }
+
+    @media (max-width: 380px) { 
+
+        .header__logo {
+            &-title {
+                font-size: 20px;
+            }
+            &-subtitle {
+                width: 160px;
+                font-size: 12px;
+            }
+        }
+    
+
+        .header__cart__btn div {
+            font-size: 15px;
+        } 
     }
