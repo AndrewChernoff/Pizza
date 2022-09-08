@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { IconContext } from "react-icons";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { FaRegTrashAlt } from "react-icons/fa";
@@ -6,33 +5,18 @@ import { Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import darkCart from "../../assets/icons/dark_cart_icon.svg";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import { Button, Modal } from "antd";
 import {
   clearCart,
   decrement,
   deleteItem,
   increment,
 } from "../../redux/cart/cart";
-import "antd/dist/antd.css";
 import "../Cart/Cart.scss";
+import ModalPopup from "../ModalPopup/ModalPopup";
 
 const CartItems = () => {
   const cartItems = useAppSelector((state) => state.cart.cart);
   const dispatch = useAppDispatch();
-
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const showModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleOk = () => {
-    setIsModalOpen(false);
-  };
-
-  const handleCancel = () => {
-    setIsModalOpen(false);
-  };
 
   const dough = ["тонкое", "традиционное"];
   let totalQuantity = 0;
@@ -59,7 +43,6 @@ const CartItems = () => {
           {cartItems.map(
             ({ id, imageUrl, name, type, size, quantity, price }) => {
               return (
-                ///transition
                 <CSSTransition key={id} timeout={500} classNames="itemq">
                   <div key={id} className="cart__item">
                     <div className="cart__item_main-info">
@@ -118,24 +101,8 @@ const CartItems = () => {
                 {totalPrice} &#8381;
               </span>
             </div>
-            <>
-              <Button
-                type="primary"
-                className="cart__footer_total-pay"
-                onClick={showModal}
-              >
-                Оплатить сейчас
-              </Button>
-              <Modal
-                title="Оплата"
-                open={isModalOpen}
-                onOk={handleOk}
-                onCancel={handleCancel}
-              >
-                <p> Итого к оплате: {totalPrice} рублей</p>
-              </Modal>
-            </>
-            {/* <button className="cart__footer_total-pay">Оплатить сейчас</button> */}
+            
+             <ModalPopup totalPrice={totalPrice}/>
           </div>
         </footer>
       </div>

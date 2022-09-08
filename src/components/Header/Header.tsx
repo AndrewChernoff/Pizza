@@ -17,7 +17,7 @@ const Header = () => {
  let cartLink;
 
   if(location.pathname === '/cart') {
-    cartLink = null 
+    cartLink = null ;
   } else {
     cartLink = <Link to='/cart' className="header__cart__btn">
     <div className="header__cart__btn_price"> {headerPrice}&#8381; </div> 
@@ -37,10 +37,6 @@ const Header = () => {
 
     {cartLink}
 
-      {/* <Link to='/cart' className="header__cart__btn">
-        <div className="header__cart__btn_price"> {headerPrice}&#8381; </div> 
-        <div> <img src={cart}/> <div> {headerQuantity} </div> </div>
-      </Link> */}
     </header>
   );
 };

@@ -43,6 +43,9 @@
             border-radius: 30px;
             padding: 0 23px 0 23px;
             text-decoration: none;
+            &:hover {
+                color: white;
+            }
 
             img {
                 max-width: 16px;

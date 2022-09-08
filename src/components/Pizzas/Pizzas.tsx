@@ -4,6 +4,7 @@ import { getFilter } from "../../redux/filter/filterSlice";
 import PizzaItem from "../PizzaItem/PizzaItem";
 import "./Pizzas.scss";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
+import { useAppSelector } from "../../hooks/hooks";
 
 type PizzaBlockProps = {
   pizzas: {
@@ -17,8 +18,9 @@ type PizzaBlockProps = {
 
 const Pizzas = (props: PizzaBlockProps) => {
   const dispatch = useDispatch();
+  const stateFilter = useAppSelector(state => state.filter.filter); 
 
-  const [activeFilter, setActiveFilter] = useState(0);
+  const [activeFilter, setActiveFilter] = useState(stateFilter);
 
   const buttonsData = [
     { id: 1, name: "Все" },

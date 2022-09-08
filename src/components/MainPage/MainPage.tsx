@@ -23,7 +23,6 @@ const MainPage = () => {
       }
     }
     ); 
-  ///const pizzasCheck = useAppSelector(state => state.pizza);
 
   useEffect(() => {
     dispatch(fetching())

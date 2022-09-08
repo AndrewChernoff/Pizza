@@ -1,9 +1,6 @@
- import { useCallback } from "react";
-
-
 const useApi = () => {
 
-    const request = useCallback(async (url: string, method = 'GET', body = null, headers = {'Content-Type': 'application/json'}) => {
+    const request = async (url: string, method = 'GET', body:string | null = null, headers = {'Content-Type': 'application/json'}) => {
 
         try {
             
@@ -19,7 +16,7 @@ const useApi = () => {
         } catch(e) {
             throw e;
         }
-    }, []);
+    };
 
     return {request}
 }
