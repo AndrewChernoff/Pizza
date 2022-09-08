@@ -26,7 +26,7 @@ const MainPage = () => {
 
   useEffect(() => {
     dispatch(fetching())
-    request("http://localhost:3001/pizzas")
+    request("https://react-tsx-pizza-shop.herokuapp.com/api/pizzas")
     .then((res: any): void => {
       dispatch(fetchPizza(res));
     })
